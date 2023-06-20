@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -58,5 +60,19 @@
         </tr>
       </tbody>
     </table>
+    <input type="text" id="typeInput" />
+    <input type="text" id="orderInput" />
+    <input type="button" value="sort" onclick="callSort()" />
+
+    <script>
+      function callSort() {
+        // Get the input values
+        let type = document.getElementById("typeInput").value;
+        let order = document.getElementById("orderInput").value;
+
+        // Call the sort function with the input values
+        sort(type, order);
+      }
+    </script>
   </body>
 </html>

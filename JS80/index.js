@@ -7,7 +7,7 @@ function sort(type, order) {
     price: 1,
     sales: 2,
   };
-
+  //   list.innerHTML = "";
   trsArr
     .sort(function (a, b) {
       var aVal = parseFloat(a.children[swObj[type]].innerHTML);
