@@ -76,7 +76,11 @@
       </tfoot>
     </table>
 
-    <input type="text" id="typeInput" />
+    <select id="typeInput">
+      <option>id</option>
+      <option>price</option>
+      <option>sales</option>
+    </select>
     <select id="orderInput">
       <option>asc</option>
       <option>desc</option>
@@ -106,7 +110,7 @@
       const btn = document.getElementById("add");
       const price = document.getElementById("priceInput");
       const sales = document.getElementById("salesInput");
-      btn.onclick = validation();
+      btn.onclick = validation;
 
       function validation() {
         if (isNaN(price.value) || isNaN(sales.value)) {

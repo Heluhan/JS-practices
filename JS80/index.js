@@ -33,6 +33,7 @@ function add(price, sales) {
   `;
   newRow.innerHTML = content;
   list.appendChild(newRow);
+  bind();
 }
 
 function addAll(items) {
