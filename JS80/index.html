@@ -9,15 +9,106 @@
     <title>Document</title>
   </head>
   <body>
+    <div class="input-container"></div>
+    <a class="price">prices: <input type="text" id="priceInput" /></a>
+    <a class="sales">sales: <input type="text" id="salesInput" /></a>
+    </div>
+    <button id="add">add</button>
     <table>
       <thead>
         <tr>
-          <th>id</th>
-          <th>price</th>
-          <th>sales</th>
+          <th>
+        <div class="inner">
+            <div>id</div>
+            <div class="icons">
+                <div class="id-arrow-up" onclick="idAscSort()">
+                    <svg t="1687488853254" class="icon" viewBox="0 0 1085 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1448" width="17" height="17"><path d="M545.20232799 240.601164L1087.99999999 783.398836l-1085.595343 0z" p-id="1449" fill="#415a77"></path></svg>
+                </div>
+                <div class="id-arrow-down" onclick="idDescSort()">
+                    <svg t="1687489367367" class="icon" viewBox="0 0 1085 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1622" width="17" height="17"><path d="M542.797672 783.398836L0 240.601164h1085.595343z" p-id="1623" fill="#415a77"></path></svg>   
+                </div>
+            </div>
+        </div>
+          </th>
+          <th>
+            <div class="inner">
+            <div>price</div>
+            <div class="icons">
+                <div class="price-arrow-up" onclick="priceAscSort()">
+                    <svg t="1687488853254" class="icon" viewBox="0 0 1085 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1448" width="17" height="17"><path d="M545.20232799 240.601164L1087.99999999 783.398836l-1085.595343 0z" p-id="1449" fill="#415a77"></path></svg>
+                </div>
+                <div class="price-arrow-down" onclick="priceDescSort()">
+                    <svg t="1687489367367" class="icon" viewBox="0 0 1085 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1622" width="17" height="17"><path d="M542.797672 783.398836L0 240.601164h1085.595343z" p-id="1623" fill="#415a77"></path></svg>   
+                </div>
+            </div>
+            </div>
+          </th>
+          <th>
+            <div class="inner">
+                <div>sales</div>
+                <div class="icons">
+                    <div class="sales-arrow-up" onclick="salesAscSort()">
+                        <svg t="1687488853254" class="icon" viewBox="0 0 1085 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1448" width="17" height="17"><path d="M545.20232799 240.601164L1087.99999999 783.398836l-1085.595343 0z" p-id="1449" fill="#415a77"></path></svg>
+                    </div>
+                    <div class="sales-arrow-down" onclick="salesDescSort()">
+                        <svg t="1687489367367" class="icon" viewBox="0 0 1085 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1622" width="17" height="17"><path d="M542.797672 783.398836L0 240.601164h1085.595343z" p-id="1623" fill="#415a77"></path></svg>   
+                    </div>
+                </div>
+                </div>
+          </th>
           <th>operation</th>
         </tr>
       </thead>
+      <script>
+        function idAscSort() {
+            clear()
+            const path = document.querySelector(".id-arrow-up .icon path")
+            path.setAttribute('fill', "#e0e1dd")
+            sort("id", "asc");
+        }
+
+        function idDescSort() {
+            clear()
+            const path = document.querySelector(".id-arrow-down .icon path")
+            path.setAttribute('fill', "#e0e1dd")
+            sort("id", "desc");
+        }
+
+        function priceAscSort() {
+            clear()
+            const path = document.querySelector(".price-arrow-up .icon path")
+            path.setAttribute('fill', "#e0e1dd")
+            sort("id", "asc");
+        }
+
+        function priceDescSort() {
+            clear()
+            const path = document.querySelector(".price-arrow-down .icon path")
+            path.setAttribute('fill', "#e0e1dd")
+            sort("price", "desc");
+        }
+
+        function salesAscSort() {
+            clear()
+            const path = document.querySelector(".sales-arrow-up .icon path")
+            path.setAttribute('fill', "#e0e1dd")
+            sort("sales", "asc");
+        }
+
+        function salesDescSort() {
+            clear()
+            const path = document.querySelector(".sales-arrow-down .icon path")
+            path.setAttribute('fill', "#e0e1dd")
+            sort("sales", "desc");
+        }
+
+        function clear() {
+            const originals = document.getElementsByTagName("path")
+            for (let item of originals) {
+                item.setAttribute('fill', "#415a77")
+            }
+        }
+      </script>
       <tbody id="jsList">
         <tr>
           <td>1</td>
@@ -76,7 +167,7 @@
       </tfoot>
     </table>
 
-    <select id="typeInput">
+    <!-- <select id="typeInput">
       <option>id</option>
       <option>price</option>
       <option>sales</option>
@@ -85,9 +176,9 @@
       <option>asc</option>
       <option>desc</option>
     </select>
-    <input type="button" value="sort" onclick="callSort()" />
+    <input type="button" value="sort" onclick="callSort()" /> -->
 
-    <script>
+    <!-- <script>
       function callSort() {
         // Get the input values
         let type = document.getElementById("typeInput").value;
@@ -96,14 +187,8 @@
         // Call the sort function with the input values
         sort(type, order);
       }
-    </script>
+    </script> -->
 
-    <br />
-    <br />
-
-    <a>prices: <input type="text" id="priceInput" /></a>
-    <a>sales: <input type="text" id="salesInput" /></a>
-    <button id="add">add</button>
 
     <script>
       bind();
