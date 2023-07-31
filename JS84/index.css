@@ -1,0 +1,41 @@
+.search {
+  position: relative;
+}
+.js-input {
+  width: 450px;
+  height: 22px;
+  line-height: 22px;
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid #cccccc;
+  outline: none;
+}
+.js-suggest {
+  width: 466px;
+  font-size: 14px;
+  border: 1px solid #cccccc;
+  background: #ffffff;
+  position: absolute;
+  left: 0;
+  top: 39px;
+}
+.js-suggest.hide {
+  display: none;
+}
+.js-suggest ul {
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.js-suggest ul li {
+  color: #000;
+  font: 14px arial;
+  line-height: 25px;
+  padding: 0 8px;
+  position: relative;
+  cursor: default;
+}
+.js-suggest ul li:hover {
+  background: #f0f0f0;
+}
